@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sara Correa | Portafolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+<body>
+  <header id="inicio" class="hero-section">
+    <div class="header-bg-anim">
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="cloud"></span>
+      <span class="cloud"></span>
+      <span class="heart"></span>
+      <span class="heart"></span>
+    </div>
+    <div class="hero-content" data-aos="fade-up">
+      <h1 class="main-phrase">Bienvenida a mi mundo <span class="emoji">💫</span></h1>
+      <button class="btn-float" onclick="document.getElementById('sobre-mi').scrollIntoView({behavior: 'smooth'})">Conóceme</button>
+    </div>
+  </header>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  <section id="sobre-mi" class="about-section" data-aos="fade-right">
+    <div class="about-img">
+      <div class="avatar-gold-frame">
+        <img src="profile.jpg" alt="Sara Correa" class="profile-pic">
+      </div>
+    </div>
+    <div class="about-text">
+      <h2>Sobre mí</h2>
+      <div class="bio-icons">
+        <span class="bio-icon">🧁</span>
+        <span class="bio-icon">📒</span>
+        <span class="bio-icon">⭐</span>
+      </div>
+      <p>Soy Sara, una soñadora creativa que ama el diseño, la papelería linda y los proyectos con alma. Mi meta es crear experiencias digitales con personalidad y alegría.</p>
+      <div class="fun-facts">
+        <div class="fun-fact-card">🌈 Amo los arcoíris y los días nublados</div>
+        <div class="fun-fact-card">🎨 Colecciono stickers y washi tapes</div>
+        <div class="fun-fact-card">☕ Fan del café con leche y los atardeceres</div>
+      </div>
+    </div>
+  </section>
+  <section id="experiencia" class="experience-section">
+    <h2 data-aos="fade-up">Experiencia</h2>
+    <div class="experience-timeline">
+      <div class="exp-item" data-aos="fade-right" data-aos-delay="100">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h3>Web Designer - Agencia PinkWave</h3>
+          <span class="exp-date">2022 - Presente</span>
+          <p>Diseño de interfaces y branding para marcas femeninas y proyectos creativos. Enfoque en experiencias visuales y usabilidad.</p>
+        </div>
+      </div>
+      <div class="exp-item" data-aos="fade-right" data-aos-delay="200">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h3>Frontend Developer - Freelance</h3>
+          <span class="exp-date">2020 - 2022</span>
+          <p>Desarrollo de sitios web responsive y animados para emprendedoras y marcas personales con estilo aesthetic y pastel.</p>
+        </div>
+      </div>
+      <div class="exp-item" data-aos="fade-right" data-aos-delay="300">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <h3>Diseñadora Gráfica - Blossom Studio</h3>
+          <span class="exp-date">2018 - 2020</span>
+          <p>Creación de identidades visuales, ilustraciones y recursos gráficos para proyectos con enfoque femenino y creativo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="proyectos" class="projects-section">
+    <h2 data-aos="fade-up">Proyectos</h2>
+    <div class="projects-gallery">
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="project1.jpg" alt="Proyecto 1">
+        <div class="project-info">
+          <h3>Proyecto Uno</h3>
+          <p>Landing page para marca de ropa playera.</p>
+          <button class="btn-pink">Ver más</button>
+        </div>
+      </div>
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="project2.jpg" alt="Proyecto 2">
+        <div class="project-info">
+          <h3>Proyecto Dos</h3>
+          <p>App de reservas para surfistas.</p>
+          <button class="btn-pink">Ver más</button>
+        </div>
+      </div>
+      <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="project3.jpg" alt="Proyecto 3">
+        <div class="project-info">
+          <h3>Proyecto Tres</h3>
+          <p>Blog de viajes y experiencias costeras.</p>
+          <button class="btn-pink">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="habilidades" class="skills-section">
+    <h2 data-aos="fade-up">Habilidades</h2>
+    <div class="skills-list hearts">
+      <div class="skill" data-aos="fade-right" data-aos-delay="100">
+        <span class="skill-icon">💖</span>
+        <span class="skill-name">Desarrollo Web</span>
+        <div class="skill-bar heart-bar"><div class="skill-level" style="width: 90%"></div></div>
+      </div>
+      <div class="skill" data-aos="fade-right" data-aos-delay="200">
+        <span class="skill-icon">⭐</span>
+        <span class="skill-name">Diseño UI/UX</span>
+        <div class="skill-bar star-bar"><div class="skill-level" style="width: 85%"></div></div>
+      </div>
+      <div class="skill" data-aos="fade-right" data-aos-delay="300">
+        <span class="skill-icon">🫧</span>
+        <span class="skill-name">Creatividad</span>
+        <div class="skill-bar bubble-bar"><div class="skill-level" style="width: 95%"></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="contacto" class="contact-section" data-aos="fade-up">
+    <h2>Contacto</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Mensaje" required></textarea>
+      <button type="submit" class="btn-candy">Enviar</button>
+    </form>
+    <div class="social-links">
+      <a href="#" class="social-btn" title="Instagram"><img src="instagram.svg" alt="Instagram"></a>
+      <a href="#" class="social-btn" title="TikTok"><img src="tiktok.svg" alt="TikTok"></a>
+      <a href="#" class="social-btn" title="GitHub"><img src="github.svg" alt="GitHub"></a>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">🌸 Sara Correa</span>
+        <p>Diseño y desarrollo web con amor, creatividad y mucho rosa pastel.</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-btn" title="Instagram"><img src="instagram.svg" alt="Instagram"></a>
+        <a href="#" class="social-btn" title="TikTok"><img src="tiktok.svg" alt="TikTok"></a>
+        <a href="#" class="social-btn" title="GitHub"><img src="github.svg" alt="GitHub"></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Sara Correa. Todos los derechos reservados. | Hecho con ✨, stickers y mucho pink</p>
+    </div>
+  </footer>
+
+  <!-- Avatar asistente virtual -->
+  <div id="avatar-assistant" class="avatar-assistant">
+    <div class="avatar-svg-container">
+      <!-- SVG princesa kawaii/chibi animada -->
+      <svg id="princess-avatar" width="90" height="110" viewBox="0 0 90 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g class="float-group">
+          <ellipse cx="45" cy="100" rx="28" ry="7" fill="#f8bbd0" opacity="0.3"/>
+          <g class="body-group">
+            <ellipse cx="45" cy="60" rx="30" ry="35" fill="#fff8e1"/>
+            <ellipse cx="45" cy="60" rx="22" ry="28" fill="#f8bbd0"/>
+            <ellipse cx="45" cy="60" rx="16" ry="20" fill="#fff"/>
+            <ellipse cx="45" cy="60" rx="10" ry="12" fill="#ffe082"/>
+          </g>
+          <g class="head-group">
+            <ellipse cx="45" cy="40" rx="22" ry="22" fill="#fff8e1"/>
+            <ellipse cx="45" cy="40" rx="18" ry="18" fill="#f8bbd0"/>
+            <ellipse cx="45" cy="40" rx="14" ry="14" fill="#fff"/>
+            <ellipse cx="45" cy="40" rx="10" ry="10" fill="#ffe082"/>
+            <!-- Ojos -->
+            <ellipse class="eye left-eye" cx="39" cy="43" rx="2.2" ry="3.2" fill="#5A4A63"/>
+            <ellipse class="eye right-eye" cx="51" cy="43" rx="2.2" ry="3.2" fill="#5A4A63"/>
+            <!-- Brillo ojos -->
+            <ellipse cx="38.5" cy="42" rx="0.7" ry="1" fill="#fff"/>
+            <ellipse cx="50.5" cy="42" rx="0.7" ry="1" fill="#fff"/>
+            <!-- Boca -->
+            <path d="M43 48 Q45 50 47 48" stroke="#5A4A63" stroke-width="1.2" fill="none"/>
+            <!-- Corona -->
+            <polygon points="45,22 48,32 42,32" fill="#ffe082" stroke="#f8bbd0" stroke-width="1.2"/>
+            <circle cx="45" cy="20" r="2" fill="#ffe082" stroke="#f8bbd0" stroke-width="1"/>
+          </g>
+          <!-- Manito saludando -->
+          <g class="hand-group">
+            <ellipse class="hand" cx="68" cy="60" rx="5" ry="2.2" fill="#fff8e1" stroke="#f8bbd0" stroke-width="1"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div id="chatbot-bubble" class="chatbot-bubble">
+      <div id="chatbot-messages" class="chatbot-messages">
+        <div class="chatbot-msg">¡Hola! Soy tu asistente princesa 💖 ¿En qué te ayudo?</div>
+      </div>
+      <form id="chatbot-form" class="chatbot-form" autocomplete="off">
+        <input id="chatbot-input" type="text" placeholder="Escribe tu pregunta..." />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <button id="chatbot-toggle" class="chatbot-toggle" title="Abrir chat">💬</button>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html> 
