@@ -48,6 +48,32 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.removeProperty('--mouse-y');
     });
   });
+
+  // Tilt interactivo en project-card y exp-item
+  document.querySelectorAll('.project-card, .exp-item').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateX = ((y / rect.height) - 0.5) * 8;
+      const rotateY = ((x / rect.width) - 0.5) * 8;
+      card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.04)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  // Avatar princesa: parpadeo y brillo extra
+  setInterval(() => {
+    const avatar = document.getElementById('princess-avatar');
+    if (avatar) {
+      avatar.style.filter = 'drop-shadow(0 0 32px #ffe082ff) drop-shadow(0 0 16px #f8bbd0ff)';
+      setTimeout(() => {
+        avatar.style.filter = '';
+      }, 900);
+    }
+  }, 5000);
 });
 
 // --- AVATAR ASISTENTE VIRTUAL ---
@@ -99,12 +125,89 @@ const FAQ = [
   {
     q: /gracias|thank/i,
     a: '¡De nada! Si tienes más preguntas, aquí estaré ✨'
+  },
+  // NUEVAS PREGUNTAS Y RESPUESTAS
+  {
+    q: /hobbies|pasatiempos|aficiones|qué te gusta hacer/i,
+    a: 'Me encanta diseñar, programar, coleccionar stickers y tomar café con leche ☕✨. ¿Y a ti?'
+  },
+  {
+    q: /color favorito|color preferido|color que te gusta/i,
+    a: '¡El rosa pastel y el lavanda son mis favoritos! ¿Cuál es el tuyo? 🎨💗'
+  },
+  {
+    q: /consejo de estudio|cómo estudio|tips de estudio|estudiar mejor/i,
+    a: 'Haz resúmenes bonitos, usa colores, toma descansos y ¡no olvides hidratarte! 💧📒✨'
+  },
+  {
+    q: /motivaci[oó]n|ánimo|frase motivadora|ánimate/i,
+    a: '¡Tú puedes con todo! Recuerda: cada día es una nueva oportunidad para brillar ✨🌈'
+  },
+  {
+    q: /tecnolog[ií]a|programaci[oó]n|c[óo]digo|computadora/i,
+    a: '¡La tecnología es mágica! Si tienes dudas de código o diseño, dime y te ayudo 💻💡'
+  },
+  {
+    q: /kawaii|frase kawaii|cute|adorable/i,
+    a: 'Eres tan kawaii como un moñito rosa en primavera 🌸🎀'
+  },
+  {
+    q: /ayuda|cómo uso|cómo navegar|no encuentro|dónde está/i,
+    a: 'Puedes usar el menú de arriba para ir a cada sección, o preguntarme por cualquier parte del portafolio. ¡Estoy aquí para guiarte! 🗺️💬'
+  },
+  {
+    q: /chiste|cuéntame algo|dime algo divertido|broma/i,
+    a: '¿Por qué el sticker no fue a la fiesta? ¡Porque no quería despegarse de su agenda! 😆'
+  },
+  {
+    q: /animal favorito|mascota|gatito|perrito/i,
+    a: '¡Me encantan los gatitos y perritos! Pero también los conejos kawaii 🐱🐶🐰'
+  },
+  {
+    q: /qu[eé] hora es|hora actual|dime la hora/i,
+    a: '¡El tiempo es ahora! Pero si quieres saber la hora, mira la esquina de tu pantalla ⏰😉'
+  },
+  {
+    q: /qu[eé] opinas de sara|sara correa/i,
+    a: 'Sara es súper creativa, talentosa y le pone mucho amor a todo lo que hace. ¡Es una inspiración! 🌟'
+  },
+  {
+    q: /emoji|pon un emoji|dame un emoji/i,
+    a: 'Aquí tienes: 💖✨🌸🎀☁️'
+  },
+  {
+    q: /adiós|bye|me voy|hasta luego/i,
+    a: '¡Hasta pronto! Recuerda que siempre puedes volver a preguntarme lo que quieras 💬👑'
   }
 ];
 
+// Chistes para el chatbot
+const CHISTES = [
+  '¿Por qué el sticker no fue a la fiesta? ¡Porque no quería despegarse de su agenda! 😆',
+  '¿Qué le dice una impresora a otra? ¿Esa hoja es tuya o es una impresión mía? 🖨️',
+  '¿Por qué el código estaba triste? Porque tenía demasiados bugs 🐞',
+  '¿Por qué el lápiz se deprimió? Porque estaba lleno de problemas... matemáticos ✏️',
+  '¿Qué hace una abeja en el gimnasio? ¡Zum-ba! 🐝',
+  '¿Por qué el café fue al psicólogo? Porque se sentía muy expreso ☕',
+  '¿Cuál es el colmo de un programador? Tener problemas con su RAM... ¡y olvidarlo todo! 💻',
+  '¿Por qué la computadora fue al médico? Porque tenía un virus 🤒',
+  '¿Por qué la agenda era tan buena amiga? Porque siempre estaba disponible para ti 📒',
+  '¿Por qué el arcoíris nunca está triste? Porque siempre sale después de la lluvia 🌈',
+];
+
 function getBotReply(msg) {
+  // Si el usuario pide otro chiste
+  if (/^otro( chiste)?$|uno m[aá]s|dame otro/i.test(msg.trim())) {
+    return CHISTES[Math.floor(Math.random() * CHISTES.length)];
+  }
   for (const f of FAQ) {
-    if (f.q.test(msg)) return f.a;
+    if (f.q.test(msg)) {
+      // Si es chiste, responde aleatorio
+      if (/chiste|divertido|broma|cuéntame algo/i.test(msg)) {
+        return CHISTES[Math.floor(Math.random() * CHISTES.length)];
+      }
+      return f.a;
+    }
   }
   return '¡Qué pregunta tan interesante! Si quieres saber más, revisa las secciones del portafolio o pregúntame otra cosa 💬';
 }

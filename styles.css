@@ -230,19 +230,23 @@ header.hero-section {
 
 /* --- EXPERIENCIA: TARJETAS/LÍNEA DE TIEMPO PASTEL --- */
 .experience-section {
-  background: var(--beige);
-  padding: 2em 2em 4em 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  background: linear-gradient(120deg, #fff8e1 60%, #f8bbd0 100%);
+  box-shadow: 0 8px 32px #f8bbd033, 0 0 0 8px #ffe08222;
+  border-radius: 2em;
+  margin: 2em 0;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  overflow: visible;
 }
-.experience-section h2 {
-  color: #5A4A63;
-  font-family: 'DM Serif Display', 'Poppins', serif;
-  font-size: 2em;
-  margin-bottom: 1.5em;
-  font-weight: 700;
-  text-shadow: 0 2px 8px #fff8e1cc;
+.experience-section h2, .experience-section .shimmer-title {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #7a003c !important;
+  text-shadow: none;
 }
 .experience-timeline {
   border-left: 3px solid #b39ddb;
@@ -271,22 +275,25 @@ header.hero-section {
   animation: popIn 0.7s both;
 }
 .exp-content {
-  background: linear-gradient(120deg, #fff8e1 60%, #f8bbd0 100%);
-  border-radius: 1.2em;
-  box-shadow: 0 2px 12px #b39ddb33;
+  color: #e75480;
+  background: linear-gradient(120deg, #fff 80%, #ffe082 100%);
+  border: 2.5px solid #f8bbd0;
+  box-shadow: 0 4px 24px #f8bbd033, 0 0 0 2px #ffe08255;
+  border-radius: 1.5em;
   padding: 1.2em 1.5em;
-  color: #333;
   position: relative;
-  z-index: 1;
+  z-index: 3;
   transition: box-shadow 0.3s, border 0.3s;
-  border: none;
   font-family: 'Poppins', 'Inter', Arial, sans-serif;
 }
 .exp-item:hover .exp-content {
   box-shadow: 0 8px 32px #f8bbd033, 0 0 0 2.5px #ffe08288;
 }
+.exp-content h3, .exp-content .exp-date, .exp-content p {
+  color: #e75480;
+  text-shadow: 0 1px 8px #fff8e1cc, 0 0 2px #fff;
+}
 .exp-content h3 {
-  color: #5A4A63;
   font-size: 1.1em;
   margin-bottom: 0.2em;
   font-weight: 700;
@@ -500,8 +507,8 @@ header.hero-section {
 
 /* Habilidades con corazones, estrellas y burbujas */
 .skills-section {
-  background: var(--lavender);
-  color: var(--hot-pink);
+  background: linear-gradient(120deg, #ffe1f2 60%, #f8bbd0 100%) !important;
+  color: #fff;
   padding: 4em 2em;
   position: relative;
 }
@@ -617,6 +624,8 @@ header.hero-section {
   padding: 4em 2em;
   text-align: center;
   position: relative;
+  margin-bottom: 0;
+  padding-bottom: 2em;
 }
 .contact-section h2 {
   color: var(--hot-pink);
@@ -697,84 +706,75 @@ header.hero-section {
 
 /* Footer aesthetic scrapbook */
 .footer {
-  background: linear-gradient(90deg, var(--lavender) 60%, var(--pink) 100%);
-  color: var(--white);
-  padding: 2.5em 0 0 0;
-  position: relative;
-  box-shadow: 0 -2px 12px var(--lavender, #b39ddb, 0.13);
-  border-top-left-radius: 2em;
-  border-top-right-radius: 2em;
+  background: #fff;
+  border-top: 2px solid #f8bbd0;
+  box-shadow: 0 -2px 16px #b39ddb11;
+  padding: 1.5em 0 0.5em 0;
+  font-family: 'Inter', 'Poppins', Arial, sans-serif;
+  color: #5A4A63;
+  font-size: 1em;
+  margin-top: 0;
 }
 .footer-content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto 1em auto;
   padding: 0 2em;
-  gap: 2em;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3em;
 }
 .footer-logo {
-  font-family: 'DM Serif Display', 'Pacifico', cursive;
-  font-size: 1.5em;
-  color: var(--white);
-  letter-spacing: 2px;
-}
-.footer-brand p {
-  margin: 0.5em 0 0 0;
-  font-size: 1.1em;
-  color: var(--white);
-  opacity: 0.85;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #d72660;
+  letter-spacing: 1px;
+  margin-bottom: 0.2em;
 }
 .footer-social {
   display: flex;
-  gap: 1.2em;
+  gap: 1em;
+  align-items: center;
+}
+.footer-social .social-btn {
+  background: #f8bbd0;
+  border-radius: 50%;
+  padding: 0.5em;
+  box-shadow: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.footer-social .social-btn:hover {
+  background: #ffe082;
+  transform: scale(1.08);
+}
+.footer-social img {
+  width: 22px;
+  height: 22px;
 }
 .footer-bottom {
-  background: rgba(255,255,255,0.08);
-  color: var(--white);
   text-align: center;
-  padding: 1.2em 0 0.5em 0;
-  font-size: 1em;
-  letter-spacing: 1px;
-  margin-top: 2em;
+  color: #b39ddb;
+  font-size: 0.98em;
+  margin-top: 0.5em;
+  letter-spacing: 0.2px;
 }
-
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .footer-content {
     flex-direction: column;
     align-items: center;
-    gap: 1em;
-    padding: 0 1em;
-  }
-  .experience-timeline {
-    padding-left: 0.5em;
-  }
-  .fun-facts {
-    flex-direction: column;
     gap: 0.7em;
-  }
-}
-@media (max-width: 600px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
     padding: 0 0.5em;
   }
-  .experience-section {
-    padding: 2em 0.5em 1em 0.5em;
-  }
-  .experience-timeline {
-    padding-left: 0.2em;
-  }
-  .project-card {
-    width: 95vw;
-    min-width: unset;
-  }
-  .skills-list {
-    gap: 1em;
+  .footer-brand {
+    align-items: center;
+    text-align: center;
   }
 }
 
@@ -1119,4 +1119,137 @@ body, .about-text, .project-info, .fun-fact-card, .exp-content, .skill-name, .co
     width: 60px;
     height: 75px;
   }
+}
+
+/* --- SHIMMER EN TÍTULOS PRINCIPALES --- */
+.shimmer-title {
+  position: relative;
+  overflow: visible;
+  background: none;
+  color: #5A4A63;
+  text-shadow: 0 2px 16px #fff8e1cc, 0 1px 0 #fff, 0 0 8px #ffe08299;
+}
+.shimmer-title .shimmer-effect {
+  display: inline;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  text-fill-color: initial;
+  text-shadow: none;
+}
+
+/* --- DECORACIONES EN EXPERIENCIA --- */
+.experience-section {
+  position: relative;
+}
+.exp-decor {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+.exp-flower {
+  width: 48px;
+  height: 48px;
+  left: -32px;
+  top: 0;
+  opacity: 0.7;
+  animation: flower-sway 4s infinite alternate ease-in-out;
+}
+.exp-bow {
+  width: 38px;
+  height: 38px;
+  right: -24px;
+  top: 60px;
+  opacity: 0.7;
+  animation: bow-bounce 3.5s infinite alternate;
+}
+.exp-sparkle {
+  width: 32px;
+  height: 32px;
+  left: 60%;
+  top: 180px;
+  opacity: 0.8;
+  animation: sparkle-twinkle 2.2s infinite alternate;
+}
+@keyframes flower-sway {
+  0% { transform: rotate(-8deg) scale(1); }
+  100% { transform: rotate(8deg) scale(1.08); }
+}
+@keyframes bow-bounce {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-10px) scale(1.1); }
+}
+@keyframes sparkle-twinkle {
+  0% { opacity: 0.5; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.2) rotate(10deg); }
+}
+
+/* --- TILT Y REBOTE EN TARJETAS --- */
+.project-card, .exp-item, .fun-fact-card, .skills-list.hearts .skill {
+  transition: transform 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+}
+.project-card:hover, .exp-item:hover, .fun-fact-card:hover, .skills-list.hearts .skill:hover {
+  transform: rotate(-2deg) scale(1.04) translateY(-6px);
+  box-shadow: 0 8px 32px #f8bbd033, 0 0 0 2.5px #ffe08288;
+}
+
+/* --- BRILLO Y PARPADEO EN AVATAR PRINCESA --- */
+#princess-avatar {
+  filter: drop-shadow(0 0 24px #ffe08299) drop-shadow(0 0 8px #f8bbd0cc);
+  animation: avatar-glow 3.5s infinite alternate;
+}
+@keyframes avatar-glow {
+  0% { filter: drop-shadow(0 0 8px #ffe08299) drop-shadow(0 0 2px #f8bbd0cc); }
+  100% { filter: drop-shadow(0 0 24px #ffe082cc) drop-shadow(0 0 12px #f8bbd0ff); }
+}
+
+/* --- ENTRADA REBOTE EN SECCIONES CLAVE --- */
+.about-section[data-aos], .projects-section[data-aos], .skills-section[data-aos], .contact-section[data-aos] {
+  animation: bounceIn 1.2s both;
+}
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.95) translateY(40px); }
+  60% { opacity: 1; transform: scale(1.05) translateY(-8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* --- DESTELLO EN ICONOS DE REDES AL HOVER --- */
+.social-btn:hover {
+  box-shadow: 0 0 24px #ffe082cc, 0 4px 16px var(--hot-pink, #ff80ab, 0.18);
+  animation: sparkle 0.7s;
+}
+@keyframes sparkle {
+  0% { filter: brightness(1.2) drop-shadow(0 0 8px #ffe082); }
+  100% { filter: brightness(1) drop-shadow(0 0 0 #fff); }
+}
+
+/* Moñitos decorativos extra */
+.exp-bow, .exp-bow2, .exp-bow3 {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 8px #ffe08299);
+}
+.exp-bow {
+  width: 38px;
+  height: 38px;
+  right: -24px;
+  top: 60px;
+  animation: bow-bounce 3.5s infinite alternate;
+}
+.exp-bow2 {
+  width: 32px;
+  height: 32px;
+  left: 10%;
+  top: 320px;
+  animation: bow-bounce 2.7s infinite alternate-reverse;
+}
+.exp-bow3 {
+  width: 28px;
+  height: 28px;
+  right: 18%;
+  top: 220px;
+  animation: bow-bounce 4.2s infinite alternate;
 } 
